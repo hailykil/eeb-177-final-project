@@ -1,0 +1,23 @@
+Species preferences
+1. bear
+2. wolf
+3. hummingbird
+4. domestic cat
+
+shell commands for finding unique species
+
+bear: cut -d ',' -f 6 bear_data.csv | tail -n +16 | sort | uniq | wc -l
+#this gives 196 unique identifiable names
+
+wolf: cut -d ',' -f 6 wolf_data.csv | tail -n +16 | sort | uniq | wc -l
+#this gives 54 unique identifiable names
+
+hummingbirds: cut -d ',' -f 6 hummingbird_data.csv | tail -n +16 | sort | uniq | wc -l
+#this gives 4 unique identifiable names
+
+cats: cut -d ',' -f 6 cat_data.csv | tail -n +16 | sort | uniq | wc -l
+#this gives 48 unique identifiable names
+
+project idea - I am interested in observing collected fossil records and look at the evolutionary history of species of my favorite animal (probably bear)
+
+challenges - plot geologic timescales in R, plot occurrences of fossil records in the data set using python, maybe using Pyrate (need to download and learn how to do the program), doing some literature searches about the phylogenetic tree
