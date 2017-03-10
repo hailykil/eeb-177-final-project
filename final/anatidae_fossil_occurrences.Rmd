@@ -1,0 +1,16 @@
+---
+title: "figure 1"
+author: "Haily Kil"
+date: "March 10, 2017"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+setwd("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/final/")
+anatidae <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/final/anatidae_1.csv", header = F, as.is = T)
+
+anatidae_occ <- ggplot(anatidae, aes(V6, ymin = V12, ymax = V11, color = V9))
+anatidae_occ <- anatidae_occ + geom_linerange()
+anatidae_occ
+```
