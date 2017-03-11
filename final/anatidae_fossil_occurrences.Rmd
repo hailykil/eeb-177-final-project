@@ -12,5 +12,32 @@ anatidae <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project
 
 anatidae_occ <- ggplot(anatidae, aes(V6, ymin = V12, ymax = V11, color = V9))
 anatidae_occ <- anatidae_occ + geom_linerange()
-anatidae_occ
+anatidae_occ + scale_x_discrete(name="Species") + scale_y_discrete(name="Occurrences") + scale_color_discrete(name="Time Interval")
 ```
+
+```{r}
+library(ggplot2)
+setwd("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/final/")
+p1 <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/final/anatidae_1.csv", header = F, as.is = T)
+
+p1 <- ggplot(p1, aes(V9, ymin = V12, ymax = V11))
+p1 <- p1 + geom_linerange()
+p1 + scale_x_discrete(name="Time Interval") + scale_y_discrete(name="Occurrences")
+p1 <- p1 + coord_flip()
+p1
+```
+
+```{r}
+library(ggplot2)
+setwd("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/final/")
+p2 <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/final/2birds.csv", header = F, as.is = T)
+
+p2 <- ggplot(p2, aes(V9, ymin = V12, ymax = V11, color=V6))
+p2 <- p2 + geom_linerange()
+p2 + scale_x_discrete(name="Time Interval") + scale_y_discrete(name="Occurrences") + scale_color_discrete(name="species")
+
+
+p2 <- p2 + coord_flip()
+p2
+```
+
